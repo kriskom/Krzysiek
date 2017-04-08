@@ -1,4 +1,4 @@
-.PHONY: test deps
+ONY: test deps
 
 deps:
 		pip install -r requirements.txt;\
@@ -9,3 +9,6 @@ linkt:
 
 test:
 		PYTHONPATH=. py.test --verbose -s
+
+docker_build:
+		docker build -t hello_world-printer .

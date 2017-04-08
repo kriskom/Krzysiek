@@ -12,3 +12,19 @@ test:
 
 docker_build:
 		docker build -t hello_world-printer .
+
+
+docker_run: docker_build
+			docker run \
+			   --name hello-wold-printer-dev \
+			   -p 5000:5000 \
+			   -d hello-wold-printer
+
+USERNAME=wsbtester1
+TAG=$(USERNAME)/hello-wold-printer
+
+docker_push:
+	docker login --username $(USERNAME) --password $(PASSWORD)  ; \
+	docker tag hello-wold-printer $(TAG); \
+	docker push $(TAG); \
+	docker logout;

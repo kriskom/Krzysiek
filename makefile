@@ -21,10 +21,11 @@ docker_run: docker_build
 			   -d hello-wold-printer
 
 USERNAME=kriskom
+DOCKER_PASSWORD=Zajecia1
 TAG=$(USERNAME)/hello-wold-printer
 
 docker_push:
-	docker login --username $(USERNAME) --password $(PASSWORD)  ; \
+	@docker login --username $(USERNAME) --password $(PASSWORD)  ; \
 	docker tag hello-wold-printer $(TAG); \
 	docker push $(TAG); \
 	docker logout;

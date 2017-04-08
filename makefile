@@ -20,7 +20,7 @@ docker_run: docker_build
 			   -p 5000:5000 \
 			   -d hello-wold-printer
 
-USERNAME=wsbtester1
+USERNAME=kriskom
 TAG=$(USERNAME)/hello-wold-printer
 
 docker_push:
